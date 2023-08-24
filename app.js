@@ -1,3 +1,4 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +7,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+var rest_ClienteRouter = require('./routes/rest_Cliente');
+
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger_output.json')
+
 
 var app = express();
 
@@ -22,6 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.use('/rest/rest_Cliente', rest_ClienteRouter);
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
