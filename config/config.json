@@ -15,9 +15,9 @@
   },
   "production": {
     "username": "root",
-    "password": "U0HmhsMLwe122xn5xPby",
+    "password": "RvBcYztFa7wBR6nJdOFb",
     "database": "railway",
-    "host": "containers-us-west-207.railway.app",
+    "host": "containers-us-west-127.railway.app",
     "dialect": "mysql"
   }
 }
